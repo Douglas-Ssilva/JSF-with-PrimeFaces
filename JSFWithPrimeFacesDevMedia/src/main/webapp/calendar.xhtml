@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+	  
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Primefaces</title>
+	<h:outputScript library="js" name="calendar.js"/>
+</h:head>
+
+<h:body>
+	<p:growl id="growl" life="3000"/>
+	<h:form>
+		<h2>Calendar</h2>
+		<h:panelGrid columns="3">
+			<p:calendar id="calendar" pattern="dd/MM/yyyy" value="#{calendarBean.date}" locale="pt_BR" mode="inline" showButtonPanel="true">
+				<p:ajax listener="#{calendarBean.displayDateInGrowl}" update="growl" event="dateSelect"/>
+			</p:calendar>
+			<p:commandButton value="Button" actionListener="#{calendarBean.formatDate}" update="date"/>
+			<h:outputText id="date" value="#{calendarBean.dateFormat}" />
+		</h:panelGrid>
+		
+		<h2>Calendar with many pages</h2>
+			<h:panelGrid>
+				<p:calendar pages="2" showButtonPanel="true"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with Navigation</h2>
+			<h:panelGrid>
+				<p:calendar navigator="true"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with effect Fade</h2>
+			<h:panelGrid>
+				<p:calendar effect="fadeIn"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with slide Horizontal</h2>
+			<h:panelGrid>
+				<p:calendar effect="slide"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with slide Vertical</h2>
+			<h:panelGrid>
+				<p:calendar effect="slideDown"/>
+			</h:panelGrid>
+			
+			
+		<h2>Calendar with slide Explode</h2>
+			<h:panelGrid>
+				<p:calendar effect="explode" effectDuration="show"/>
+			</h:panelGrid>
+			
+			
+		<h2>Calendar with slide Fold</h2>
+			<h:panelGrid>
+				<p:calendar effect="fold" effectDuration="show"/>
+			</h:panelGrid>
+			
+			
+		<h2>Calendar with slide Drop</h2>
+			<h:panelGrid>
+				<p:calendar effect="drop"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with Hour</h2>
+			<h:panelGrid>
+				<p:calendar pattern="dd/MM/yyyy HH:mm" locale="pt_BR" />
+			</h:panelGrid>
+			
+		<h2>Calendar with only Hour</h2>
+			<h:panelGrid>
+				<p:calendar timeOnly="true" pattern="HH:mm" locale="pt_BR" />
+			</h:panelGrid>
+			
+		<h2>Calendar with AM</h2>
+			<h:panelGrid>
+				<p:calendar pattern="dd/MM/yyyy HH:mm a"/>
+			</h:panelGrid>
+			
+		<h2>Calendar with definition min hour</h2>
+			<h:panelGrid>
+				<p:calendar stepHour="2" stepMinute="30" stepSecond="20" pattern="dd/MM/yyyy HH:mm:ss"/>
+			</h:panelGrid>
+			
+		<h2>Calendar comercial</h2>
+			<h:panelGrid>
+				<p:calendar minHour="8" maxHour="18" stepMinute="30" stepSecond="20" pattern="dd/MM/yyyy HH:mm:ss"/>
+			</h:panelGrid>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	</h:form>
+</h:body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
