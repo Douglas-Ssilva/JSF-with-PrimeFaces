@@ -10,21 +10,20 @@
 	<title>Primefaces</title>
 </h:head>
 
+				
 <h:body>
 	<h:form>
 		<p:panel header="Auto Complete Simples" toggleable="true">
 			<h:panelGrid columns="2" cellpadding="3">
 				<h:outputLabel value="Clients: "/>
-				<!-- queryDelay= 1000, ele demora mais p fazer o request -->
-				<!-- minQueryLength, passo a quantidade de caracteres minima p ele fazer a pesquisa -->
-				<!-- forceSelectio=true, força a seleção de alguem -->
-				<!-- dropDown=true, aparece o button p selection -->
 				<p:autoComplete id="auto" value="#{autoCompleteBean.client}" completeMethod="#{autoCompleteBean.methodComplete}"/>
 			</h:panelGrid>
 		</p:panel>	
 	</h:form>
 </h:body>
+
 </html>
+
 
 
 
